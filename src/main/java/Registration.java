@@ -45,7 +45,7 @@ public class Registration extends HttpServlet {
          preparedStmt.setString(2, password);
          preparedStmt.execute();
          connection.close();
-         RequestDispatcher ds = request.getRequestDispatcher("/simpleFormInsert.html");
+         RequestDispatcher ds = request.getRequestDispatcher("/ValidationMessage.html");
      	 ds.include(request, response);
       } catch (Exception e) {
          e.printStackTrace();
