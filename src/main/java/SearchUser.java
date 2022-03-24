@@ -13,12 +13,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/SimpleFormSearch")
-public class SimpleFormSearch extends HttpServlet {
+@WebServlet("/SearchUser")
+public class SearchUser extends HttpServlet {
    private static final long serialVersionUID = 1L;
 
 
-   public SimpleFormSearch() {
+   public SearchUser() {
       super();
    }
 
