@@ -1,4 +1,3 @@
-
 /**
  * @file Registration.java
  */
@@ -28,7 +27,7 @@ public class Registration extends HttpServlet {
       
       if (userName.isEmpty() && password.isEmpty() || userName.isEmpty() || password.isEmpty()) 
       {
-    	  RequestDispatcher ds = request.getRequestDispatcher("/RegistrationFail.html");
+    	  RequestDispatcher ds = request.getRequestDispatcher("/Error-Message.html");
       	  ds.include(request, response);
       }
       else 
@@ -45,7 +44,7 @@ public class Registration extends HttpServlet {
          preparedStmt.setString(2, password);
          preparedStmt.execute();
          connection.close();
-         RequestDispatcher ds = request.getRequestDispatcher("/ValidationMessage.html");
+         RequestDispatcher ds = request.getRequestDispatcher("/Validation-Message.html");
      	 ds.include(request, response);
       } catch (Exception e) {
          e.printStackTrace();

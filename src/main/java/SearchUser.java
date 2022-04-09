@@ -35,11 +35,6 @@ public class SearchUser extends HttpServlet {
          connection = DBConnection.connection;
 
 
-         if (userName.isEmpty() && password.isEmpty() || userName.isEmpty() || password.isEmpty()) {
-             request.getRequestDispatcher("/ErrorMessage.html").forward(request, response);
-
-            
-         } else {
             String selectSQL = "SELECT * FROM TechRegistration WHERE USERNAME = ? AND PASSWORD = ?";
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, userName);
@@ -55,19 +50,19 @@ public class SearchUser extends HttpServlet {
                 
                 if (theUserName.contains(userName) && thePassword.contains(password)) 
                 {
-                	RequestDispatcher ds = request.getRequestDispatcher("/to-do.html");
+                	RequestDispatcher ds = request.getRequestDispatcher("/home.html");
                 	ds.include(request, response);
                 	flag = 1;
                 }
                 else 
                 {
-                	RequestDispatcher ds = request.getRequestDispatcher("/ErrorMessage.html");
+                	RequestDispatcher ds = request.getRequestDispatcher("/Error-Message.html");
                 	ds.include(request, response);
                 }
                
              }
             
-         }
+         
       
       } catch (SQLException se) {
          se.printStackTrace();
@@ -76,7 +71,7 @@ public class SearchUser extends HttpServlet {
       } finally {
          try {
         	 if (flag == 0) {
-        	 RequestDispatcher ds = request.getRequestDispatcher("/ErrorMessage.html");
+        	 RequestDispatcher ds = request.getRequestDispatcher("/Error-Message.html");
          	ds.include(request, response);
         	 }
         	 else 
