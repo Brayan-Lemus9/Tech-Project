@@ -34,7 +34,7 @@ public class Registration extends HttpServlet {
       {
 
       Connection connection = null;
-      String insertSql = " INSERT INTO TechRegistration (id, USERNAME, PASSWORD) values (default, ?, ?)";
+      String insertSql = " INSERT INTO USER (USERNAME, PASSWORD, SPANISH_LEVEL, JAPANESE_LEVEL) values ( ?, ?,1,1)";
 
       try {
          DBConnection.getDBConnection(getServletContext());

@@ -35,7 +35,7 @@ public class SearchUser extends HttpServlet {
          connection = DBConnection.connection;
 
 
-            String selectSQL = "SELECT * FROM TechRegistration WHERE USERNAME = ? AND PASSWORD = ?";
+            String selectSQL = "SELECT * FROM USER WHERE USERNAME = ? AND PASSWORD = ?";
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, userName);
             preparedStatement.setString(2, password);
